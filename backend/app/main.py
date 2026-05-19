@@ -18,11 +18,15 @@ async def lifespan(_: FastAPI):
 
 app = FastAPI(title=settings.app_name, lifespan=lifespan)
 
+# Keep CORS resilient in Render where frontend URLs are dynamic.
+allowed_origins = [origin.strip() for origin in settings.cors_origins.split(",") if origin.strip()]
+allowed_origin_regex = settings.cors_origin_regex.strip() or r"^https://.*\.onrender\.com$"
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[origin.strip() for origin in settings.cors_origins.split(",")],
-    allow_origin_regex=settings.cors_origin_regex or None,
-    allow_credentials=True,
+    allow_origins=allowed_origins,
+    allow_origin_regex=allowed_origin_regex,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
