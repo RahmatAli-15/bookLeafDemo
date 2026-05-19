@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --rose-50: #fff1f7;
+  --rose-100: #ffe4f1;
+  --rose-200: #ffc9e2;
+  --rose-500: #f43f8e;
+  --rose-700: #be185d;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top right, #ffd9ec 0%, #fff8fc 38%, #ffffff 100%);
+  color: #3f3f46;
+}
