@@ -39,4 +39,4 @@ services:
     plan: free
     envVars:
       - key: VITE_API_BASE
-        value: https://bookai-backend.onrender.com/api
+        value: https://bookai-backend-q94e.onrender.com/api
