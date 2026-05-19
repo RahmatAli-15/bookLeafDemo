@@ -6,6 +6,7 @@ class Settings(BaseSettings):
     app_env: str = "development"
     database_url: str = "postgresql+asyncpg://postgres:postgres@localhost:5432/bookai"
     cors_origins: str = "http://localhost:5173"
+    cors_origin_regex: str = ""
     upload_dir: str = "./storage/uploads"
     audio_dir: str = "./storage/audio"
     chunk_size: int = 800

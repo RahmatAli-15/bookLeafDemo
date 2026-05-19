@@ -20,7 +20,9 @@ services:
           name: bookai-postgres
           property: connectionString
       - key: CORS_ORIGINS
-        value: https://bookai-frontend.onrender.com
+        value: http://localhost:5173
+      - key: CORS_ORIGIN_REGEX
+        value: https://.*\\.onrender\\.com
       - key: GROQ_API_KEY
         sync: false
       - key: GROQ_MODEL
